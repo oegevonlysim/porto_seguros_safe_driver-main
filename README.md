@@ -143,9 +143,27 @@ Or ....
    
 ## Usage
 
-In order to train the model and store test data in the data folder and the model in models run:
+### LightGBM Classifier (NEW!)
+
+Run the quick LightGBM classifier baseline with feature importance visualization:
 
 **`Note`**: Make sure your environment is activated.
+
+```bash
+python lgbm_classifier.py
+```
+
+This will:
+- Load the Porto Seguro training data from `data/train.csv`
+- Train a LightGBM classifier with default parameters
+- Evaluate model performance (Accuracy, ROC-AUC)
+- Generate a feature importance plot saved as `feature_importance.png`
+
+See [LGBM_README.md](LGBM_README.md) for detailed documentation.
+
+### Original Example Scripts
+
+In order to train the model and store test data in the data folder and the model in models run:
 
 ```bash
 python example_files/train.py  
