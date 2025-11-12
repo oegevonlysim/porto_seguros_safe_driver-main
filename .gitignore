@@ -137,3 +137,6 @@ dmypy.json
 
 # Data 
 data/
+
+# Generated artifacts
+feature_importance.png
