@@ -4,22 +4,45 @@ This is a ML project based on the public database from [Kaggle's Porto Seguro's 
 
 The goal is to predict the probability that the policy holder will file an insurance claim within 12 months.
 
-In this repository you will find the notebook `data_processing_and_eda.ipynb` documenting our analysis and findings, as well as a breakdown of column information in `columns.md`.
+In this repository you will find multiple notebooks documenting our analysis and model experiments, as well as a breakdown of column information in `Assets/columns.md`.
 
 If you want to explore the data yourself, you can find it on Kaggle at the link listed above.
 
 ## Project Structure
 
 ```
-├── data/
-│   └── porto-seguro-safe-driver-prediction/
-│       ├── train.csv                    # Training dataset (595,212 rows, 59 features)
-│       ├── test.csv                     # Test dataset (892,816 rows)
-│       └── sample_submission.csv        # Sample submission format
-├── data_processing_and_eda.ipynb        # Data processing and exploratory analysis
-├── columns.md                           # Detailed feature descriptions and naming conventions
-├── requirements.txt                     # Python dependencies
-└── Makefile                            # Environment setup automation
+├── Assets/                              # Reference documentation and examples
+│   ├── columns.md                       # Detailed feature descriptions and naming conventions
+│   ├── model_overview.md                # Model comparison and performance metrics
+│   ├── example_files/                   # Reference Python scripts
+│   │   ├── feature_engineering.py
+│   │   ├── train.py
+│   │   └── predict.py
+│   └── models/                          # Saved model artifacts
+│       └── lgbm_model.txt
+├── data/                                # Data files
+│   ├── porto-seguro-safe-driver-prediction/
+│   │   ├── train.csv                    # Training dataset (595,212 rows, 59 features)
+│   │   ├── test.csv                     # Test dataset (892,816 rows)
+│   │   └── sample_submission.csv        # Sample submission format
+│   ├── train_cleaned.csv                # Cleaned training data
+│   └── train_cleaned.pkl                # Pickled cleaned data
+├── images/                              # Visualizations and plots
+│   ├── model_comparison.png
+│   ├── Risk_distribution.png
+│   └── (various model performance plots)
+├── cleaned_data_processing_and_eda.ipynb     # Data cleaning and EDA notebook
+├── full_table_data_processing_and_eda.ipynb  # Full dataset EDA
+├── porto_seguro_dummy_baseline.ipynb         # Baseline dummy classifier
+├── porto_seguro_lgbm_baseline.ipynb          # LightGBM baseline model
+├── porto_seguro_logistic_baseline.ipynb      # Logistic regression baseline
+├── MLP_Neural_Network_Classifier.ipynb       # Neural network model
+├── Random_Forest_Classifier.ipynb            # Random forest model
+├── XGBoost_Classifier.ipynb                  # XGBoost model
+├── lazy_predict.ipynb                        # Automated model comparison
+├── risk_groups.ipynb                         # Risk segmentation analysis
+├── requirements.txt                          # Python dependencies
+└── Makefile                                  # Environment setup automation
 ```
 
 ## Dataset Overview
@@ -36,7 +59,7 @@ Feature types include:
 - `_cat`: Categorical features (encoded discrete categories)
 - (no suffix): Continuous or ordinal numeric features
 
-For detailed feature descriptions, see [`columns.md`](columns.md).
+For detailed feature descriptions, see [`Assets/columns.md`](Assets/columns.md).
 
 **Dataset Statistics:**
 - Training samples: 595,212
