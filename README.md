@@ -44,6 +44,29 @@ For detailed feature descriptions, see [`columns.md`](columns.md).
 - Features: 59 (including ID and target)
 - Target class imbalance: ~3.6% positive class (claims filed)
 
+## Getting the Data
+
+The raw dataset files are available from [Kaggle's Porto Seguro competition page](https://www.kaggle.com/competitions/porto-seguro-safe-driver-prediction/data). Download and extract the data to the `data/porto-seguro-safe-driver-prediction/` directory.
+
+### Generating Cleaned Data
+
+To generate the cleaned and preprocessed dataset (`train_cleaned.csv`):
+
+1. Download the raw data from Kaggle (see link above)
+2. Place the data files in `data/porto-seguro-safe-driver-prediction/`
+3. Run the data processing notebook:
+   ```bash
+   jupyter notebook data_processing_and_eda.ipynb
+   ```
+4. Execute all cells in the notebook to generate `data/train_cleaned.csv`
+
+The data cleaning process includes:
+- Removing calculated features (`calc_` columns)
+- Handling missing values (replacing -1 with NaN, imputing with median)
+- Dropping columns with >10% missing values
+- Removing the ID column
+- **Result:** Clean dataset with 595,212 rows × 35 columns
+
 ## Set up your Environment
 
 ### **`macOS`** type the following commands : 
