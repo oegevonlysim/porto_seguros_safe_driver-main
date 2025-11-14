@@ -12,3 +12,4 @@ lightgbm==4.6.0
 pytest==8.3.2
 nbdime==4.0.2
 missingno==0.5.2
+lazypredict==0.2.16
